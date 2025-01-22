@@ -26,16 +26,25 @@ int main()
 
     // second approach
 
+   // Online C++ compiler to run C++ program online
+    int nn;
+    cout << "\n\nEnter a range for prime number you want : ";
+    cin >> nn;
     int i = 2;
-    while (i <= n / 2)
+    cout << "\nPRIME NUMBERS ARE\n\n";
+    
+    while(i <= nn)
     {
-        if (n % i == 0)
-            break;
+        int j = 2;
+        while(j <= i/2)   
+        {
+            if(i % j == 0)
+                break;
+            j++;
+        }
+        if(j == i / 2 + 1) 
+            cout << i << " ";
         i++;
     }
-    if (i == n / 2 + 1)
-        cout << n << " is a prime number." << endl;
-    else
-        cout << n << " is not a prime number." << endl;
     return 0;
 }
