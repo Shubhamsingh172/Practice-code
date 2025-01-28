@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//program for checking whether number is palindrome or not.
 int palindrome(long long int n)
 {
     long long temp = n;
