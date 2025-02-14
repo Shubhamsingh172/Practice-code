@@ -75,31 +75,31 @@ public:
     void createTree(string input)
     {
         int i = 0;
-        while (input[i])
+        while (input[i]) // here one by one the character will check and went for insertion into the tree node 
         {
-            Tnode *p = new Tnode(input[i]);
-            if (root == nullptr)
+            Tnode *p = new Tnode(input[i]); // stroing each character into the tree node 
+            if (root == nullptr) //checking whether the tree's root is null or not if  it is null then the character will assign to root
             {
                 root = p;
             }
-            else
+            else //else it will jump to its next condition 
             {
-                Queue que;
+                Queue que; // we need one for storing the root and its data to add perfectly into the binary tree
                 que.push(root); // step 1
                 while (1)
                 {
-                    Tnode *popped = que.pop();
-                    if (popped->left == nullptr)
+                    Tnode *popped = que.pop(); // step 2
+                    if (popped->left == nullptr) //step 3
                     {
                         popped->left = p;
                         break;
                     }
-                    else if (popped->right == nullptr)
+                    else if (popped->right == nullptr) // step 3
                     {
                         popped->right = p;
                         break;
                     }
-                    else
+                    else // step 4
                     {
                         que.push(popped->left);
                         que.push(popped->right);
@@ -116,11 +116,11 @@ public:
         cout << "\nBFS :";
         while (!que.isEmpty())
         {
-            Tnode *popped = que.pop();
-            cout << popped->data << " ";
-            if (popped->left)
+            Tnode *popped = que.pop(); // step 2
+            cout << popped->data << " "; // step 3
+            if (popped->left) // step 4
                 que.push(popped->left);
-            if (popped->right)
+            if (popped->right) // step 4
                 que.push(popped->right);
         }
     }
