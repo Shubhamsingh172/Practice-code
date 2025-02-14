@@ -109,6 +109,37 @@ public:
             i++;
         }
     }
+    Tnode *getRoot()
+    {
+        return root;
+    }
+    void preOrder(Tnode *root)
+    {
+        if(root != nullptr)
+        {
+            cout << root->data << " ";
+            preOrder(root->left);
+            preOrder(root->right);
+        }
+    }
+    void inOrder(Tnode *root)
+    {
+        if(root != nullptr)
+        {
+            inOrder(root->left);
+            cout << root->data << " ";
+            inOrder(root->right);
+        }
+    }
+    void postOrder(Tnode *root)
+    {
+        if(root != nullptr)
+        {
+            postOrder(root->left);
+            postOrder(root->right);
+            cout << root->data << " ";
+        }
+    }
     void bfs() // display function
     {
         Queue que;
@@ -134,5 +165,11 @@ int main()
     bt.createTree(input);
     bt.bfs();
     cout << endl;
+    cout << "\nPreorder Traversal of the Tree" << endl;
+    bt.preOrder(bt.getRoot());
+    cout << "\nInOrder Traversal of the Tree" << endl;
+    bt.inOrder(bt.getRoot());
+    cout << "\nPostOrdr Traversal of the Tree" << endl;
+    bt.postOrder(bt.getRoot());
     return 0;
 }
