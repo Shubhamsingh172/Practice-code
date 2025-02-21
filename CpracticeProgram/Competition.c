@@ -22,4 +22,30 @@
 // }
 
 //program 4:
+#include <stdlib.h>
+// #include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("Enter the number of elements : ");
+    scanf("%d", &n);
+    int *arr = (int *)malloc(n * sizeof(int)); // used for memory allocation in the memory 
+    //malloc() ek single block of memory allocate karta hai, lekin jo memory allocate hoti hai, wo initialize nahi hoti. Matlab us memory block mein garbage values hoti hain.
+    //malloc() ka return type void* hota hai, isliye aapko usse appropriate pointer type mein cast karna padta hai (jaise int*, char*).
+    for(int i = 0; i < n; i++)
+    {
+        printf("Enter %d : ",i);
+        scanf("%d", &arr[i]);
+    }
+    if(arr == NULL)
+        printf("\nMemory Allocation is not done properly.\n");
+    
+    for(int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    free(arr);
+    return 0;
+}
 
