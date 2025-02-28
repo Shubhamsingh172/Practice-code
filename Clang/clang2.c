@@ -80,20 +80,98 @@
 
 //program 7 -->double pointers question 
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main() {
-    int a = 5, b = 10;
-    int *p = &a, *q = &b;
-    int **pp = &p, **qq = &q;
+// int main() {
+//     int a = 5, b = 10;
+//     int *p = &a, *q = &b;
+//     int **pp = &p, **qq = &q;
 
-    **pp += 2;
-    **qq -= 3;
-    *pp = q;
-    **pp *= 2;
+//     **pp += 2;
+//     **qq -= 3;
+//     *pp = q;
+//     **pp *= 2;
 
-    printf("%d %d\n", a, b);
-    return 0;
-}
+//     printf("%d %d\n", a, b);
+//     return 0;
+// }
 
-//program 8
+//program 8 this program will show an error because void cannot be used in pointer arithmetic as it is a empty data type means 0
+
+// #include <stdio.h>
+
+// int main() {
+//     void *ptr;
+//     int x = 100;
+//     ptr = &x;
+    
+//     printf("%d", *(ptr + 1));
+//     return 0;
+// }
+
+
+// program 9 :  basic 2d pointer access question 
+
+// #include <stdio.h>
+
+// int main() {
+//     int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+//     int *ptr = &arr[0][0];
+
+//     printf("%d ", *(ptr + 4));  // Accessing arr[1][1]
+//     printf("%d ", *(ptr + 5));  // Accessing arr[1][2]
+//     return 0;
+// }
+
+
+//program 10 : double pointer arithmetic question in c language 
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int arr[][3] = {{1,2,3},{4,5,6},{7,8,9}};
+//     printf("%d\n", *(*(arr + 2) + 2)); // crazy bhai smjha mujhe
+// }
+
+
+//program 11 : question on pointer arithmetic means arr name in double pointer itself is the address of the 1st element of the 1st row
+
+// #include <stdio.h>
+
+// int main() {
+//     int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+//     int *ptr = *arr;
+
+//     printf("%d \n",*(ptr + 0)); 
+//     printf("%d \n", *(ptr + 1));
+//     return 0;
+// }
+
+// program 12: this program is same as above we do just the change is it goes with typecasting of pointer data type 
+
+// #include <stdio.h>
+
+// int main() {
+//     int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+//     int *ptr = (int *)arr;
+
+//     printf("%d ", *(ptr + 3));  // Accessing arr[1][0]
+//     printf("%d ", *(ptr + 4));  // Accessing arr[1][1]
+//     return 0;
+// }
+
+// program 13: segmentation fault program in c language 
+// #include <stdio.h>
+
+// int main() {
+//     int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+//     int **ptr = (int **)arr;
+
+//     printf("%d ", *(*(ptr + 1) + 1));  // Accessing arr[1][1]
+//     return 0;
+// }
+
+
+
+
