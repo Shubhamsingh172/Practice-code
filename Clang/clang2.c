@@ -173,5 +173,15 @@
 // }
 
 
+// for above the correction should be this one.
+// program 14
+#include <stdio.h>
 
-
+int main()
+{
+    int arr[][3] = {{1,2,3},{4,5,6}};
+    int (*a)[3] = arr;
+    //So int (*ptr)[3] tells the compiler that ptr is not a pointer to an integer (int *), but a pointer to an array of 3 integers
+    // (int[3]).
+    printf("%d\n", *(*(a + 1) + 1));
+}
