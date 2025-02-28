@@ -181,3 +181,13 @@ p2 = &b;   // Galat! Kyunki `p2` ka address change nahi ho sakta
 
 */
 
+// program 10 : initializing the value to a null pointer which is pointing to nothing 
+#include <stdio.h>
+
+int main() {
+    int *ptr;
+    *ptr = 10;
+    
+    printf("%d", *ptr);
+    return 0;
+}
