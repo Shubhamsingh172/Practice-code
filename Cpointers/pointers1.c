@@ -209,3 +209,37 @@ p2 = &b;   // Galat! Kyunki `p2` ka address change nahi ho sakta
 //     printf("%d\n", a);
 //     return 0;
 // }
+
+//program 12 : 
+
+//structure and pointer in c language 
+// #include <stdio.h>
+
+// struct Test {
+//     char c;
+//     int i;
+// };
+
+// int main() {
+//     struct Test t = {'A', 100};
+//     struct Test *ptr = &t;
+
+//     printf("%c %d\n", *(char *)ptr, *(int *)((char *)ptr + 4));
+//     //also
+//     printf("%c %d\n",t.c, t.i);
+//     // printf("%c %d\n",*ptr.c, *ptr.i);
+//     return 0;
+// }
+
+
+//program 13:
+#include <stdio.h>
+
+int main() {
+    int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int *ptr1 = &arr[0][0];
+    int **ptr2 = &ptr1;
+
+    printf("%d %d\n", **ptr2, *(*ptr2 + 3)); // 1 4 is the answer
+    return 0;
+}
