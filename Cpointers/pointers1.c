@@ -243,3 +243,17 @@ int main() {
     printf("%d %d\n", **ptr2, *(*ptr2 + 3)); // 1 4 is the answer
     return 0;
 }
+
+
+//program 14 : changing 2d array values with pointer
+
+// #include <stdio.h>
+
+// int main() {
+//     int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+//     int *ptr = &arr[0][0];
+
+//     *(ptr + 4) = 100;  // Changing arr[1][1] using pointer
+//     printf("%d %d %d\n", arr[0][0], arr[1][1], arr[2][2]);
+//     return 0;
+// }
