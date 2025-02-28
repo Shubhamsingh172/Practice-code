@@ -28,6 +28,8 @@
 //     return 0;
 // }
 
+//program 4
+
 int main()
 {
     int x = 1000; 
@@ -37,4 +39,5 @@ int main()
     int xx = 1000, yy = 2000; // result is always 1
     int *p = &x, *q = &y;
     printf("%d \n", q - p);
+    printf("%d \n", p - q);
 }
