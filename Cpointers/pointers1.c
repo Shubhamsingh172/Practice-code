@@ -151,7 +151,7 @@ int main() {
     return 0;
 }
 
-1️⃣ const int *p1 = &a; (Pointer to Constant Integer)
+1️⃣ const int *p1 = &a; or int const *p1 = &a; (Pointer to Constant Integer)
 💡 Yeh p1 ka type hai:
 
 const int *p1;
