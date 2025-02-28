@@ -175,13 +175,97 @@
 
 // for above the correction should be this one.
 // program 14
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-    int arr[][3] = {{1,2,3},{4,5,6}};
-    int (*a)[3] = arr;
-    //So int (*ptr)[3] tells the compiler that ptr is not a pointer to an integer (int *), but a pointer to an array of 3 integers
-    // (int[3]).
-    printf("%d\n", *(*(a + 1) + 1));
-}
+// int main()
+// {
+//     int arr[][3] = {{1,2,3},{4,5,6}};
+//     int (*a)[3] = arr;
+//     //So int (*ptr)[3] tells the compiler that ptr is not a pointer to an integer (int *), but a pointer to an array of 3 integers
+//     // (int[3]).
+//     printf("%d\n", *(*(a + 1) + 1));
+// }
+
+
+// program 15 using malloc and free we are declaring 2d array and free it by using malloc and free 
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// int main() {
+//     int **arr;
+//     arr = (int **)malloc(2 * sizeof(int *));
+    
+//     for (int i = 0; i < 2; i++) {
+//         arr[i] = (int *)malloc(3 * sizeof(int));
+//     }
+
+//     arr[0][0] = 1; arr[0][1] = 2; arr[0][2] = 3;
+//     arr[1][0] = 4; arr[1][1] = 5; arr[1][2] = 6;
+
+//     printf("%d ", *(*(arr + 1) + 2));  // Accessing arr[1][2]
+
+//     // Freeing dynamically allocated memory
+//     for (int i = 0; i < 2; i++) {
+//         free(arr[i]);
+//     }
+//     free(arr);
+
+//     return 0;
+// }
+
+// program 16 using pointer arithmetic printing a 2d array
+
+// #include <stdio.h>
+
+// int main() {
+//     int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+//     int *ptr = (int *)arr;
+
+//     for (int i = 0; i < 6; i++) {
+//         printf("%d ", *(ptr + i));
+//     }
+
+//     return 0;
+// }
+
+// program 17 using pointer arithmetic we are printing an element of an array
+
+// #include <stdio.h>
+
+// int main() {
+//     int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+//     int *ptr = &arr[0][0];
+
+//     printf("%d ", *(ptr + (2 * 3) + 1));  // Accessing arr[2][1]
+//     return 0;
+// }
+
+//program 18: using pointer manipulating the value of array means changing directly using its address 
+
+// #include <stdio.h>
+
+// int main() {
+//     int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+//     int *ptr = &arr[0][0];
+
+//     *ptr = 10;  // Trying to modify constant array
+//     printf("%d ", arr[0][0]);
+//     return 0;
+// }
+
+
+// program 19 : what if the above program used with const 
+
+// #include <stdio.h>
+
+// int main() {
+//     const int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+//     const int *ptr = &arr[0][0];
+
+//     *ptr = 10;  // Trying to modify constant array
+//     printf("%d ", arr[0][0]);
+//     return 0;
+// }
+//it will give the error of ready only instead of modifying it as it was declared as constant so it is prohibited.
+
+
