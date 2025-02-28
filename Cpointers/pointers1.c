@@ -135,3 +135,49 @@ If ptr1 is ahead of ptr2 (i.e., pointing to an earlier index in the array), the 
 // }
 
 
+/*
+program 9 :
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 10;
+    const int *p1 = &a;
+    int *const p2 = &a;
+
+    p1 = &b;  // Allowed?
+    *p2 = 20; // Allowed?
+
+    printf("%d %d\n", *p1, *p2);
+    return 0;
+}
+
+1️⃣ const int *p1 = &a; (Pointer to Constant Integer)
+💡 Yeh p1 ka type hai:
+
+const int *p1;
+Iska matlab p1 ek pointer hai jo kisi constant integer ko point karega.
+Constant integer ka matlab:
+*p1 ko modify nahi kar sakte (dereferencing ke through value change nahi kar sakte).
+Par p1 ko kisi aur address pe point karwa sakte hain.
+✅ Allowed:
+
+p1 = &b;   // Haan, kyunki pointer `p1` ka address change ho sakta hai
+❌ Not Allowed:
+
+
+*p1 = 20;  // Galat! Read-only integer ko modify karne ki koshish
+2️⃣ int *const p2 = &a; (Constant Pointer to Integer)
+💡 Yeh p2 ka type hai:
+
+int *const p2;
+Iska matlab p2 ek constant pointer hai, jo kisi ek integer ko point karega aur iska address change nahi ho sakta.
+Par *p2 ki value modify kar sakte hain!
+❌ Not Allowed:
+
+p2 = &b;   // Galat! Kyunki `p2` ka address change nahi ho sakta
+✅ Allowed:
+
+*p2 = 20;  // Haan, kyunki hum `*p2` ki value change kar sakte hain
+
+*/
+
