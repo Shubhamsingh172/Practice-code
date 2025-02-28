@@ -182,12 +182,30 @@ p2 = &b;   // Galat! Kyunki `p2` ka address change nahi ho sakta
 */
 
 // program 10 : initializing the value to a null pointer which is pointing to nothing 
-#include <stdio.h>
 
-int main() {
-    int *ptr;
-    *ptr = 10;
+// #include <stdio.h>
+
+// int main() {
+//     int *ptr;
+//     *ptr = 10;
     
-    printf("%d", *ptr);
-    return 0;
-}
+//     printf("%d", *ptr);
+//     return 0;
+// }
+
+
+//program 11: tricky pointer derefrencing in c
+
+// #include <stdio.h>
+
+// int main() {
+//     int a = 5;
+//     int *ptr1 = &a;
+//     int **ptr2 = &ptr1;
+//     int ***ptr3 = &ptr2;
+
+//     ***ptr3 += 2;
+
+//     printf("%d\n", a);
+//     return 0;
+// }
