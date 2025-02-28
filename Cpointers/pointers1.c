@@ -115,3 +115,23 @@ If ptr1 is ahead of ptr2 (i.e., pointing to an earlier index in the array), the 
 // Tumne "Hello" ka pehla character (H) change karke 'M' karne ki koshish ki.
 // Lekin yeh read-only memory mein hai!
 // Result: Segmentation Fault (core dumped) ya undefined behavior (program crash ho sakta hai).
+
+
+//program 8 : function pointer in deep 
+
+// #include <stdio.h>
+
+// void greet1() { printf("Hello! "); }
+// void greet2() { printf("Namaste! \n"); }
+
+// void (*getGreeting(int x))() {
+//     return (x % 2 == 0) ? greet1 : greet2;
+// }
+
+// int main() {
+//     void (*ptr)() = getGreeting(3);
+//     ptr();
+//     return 0;
+// }
+
+
