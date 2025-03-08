@@ -86,7 +86,7 @@ public:
             {
                 Queue que;      // we need one for storing the root and its data to add perfectly into the binary tree
                 que.push(root); // step 1
-                while (1)
+                while(1)
                 {
                     Tnode *popped = que.pop();   // step 2
                     if (popped->left == nullptr) // step 3

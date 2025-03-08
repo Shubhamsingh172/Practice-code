@@ -33,9 +33,9 @@ class Queue
     {
         front = rear = nullptr;
     }
-    void push(Tnode *data)
+    void push(Tnode *e)
     {
-        Qnode *p = new Qnode(data);
+        Qnode *p = new Qnode(e);
         if(rear == nullptr)
         {
             front = rear = p;
@@ -45,7 +45,7 @@ class Queue
     }
     bool isEmpty()
     {
-        return rear == nullptr;
+        return front == nullptr;
     }
     Tnode *pop()
     {
@@ -115,7 +115,7 @@ class BinaryTree
         {
             cout << root->data << " ";
             preOrder(root->left);
-            preOrder(root->left);
+            preOrder(root->right);
         }
     }
     void postOrder(Tnode *root) // this root is local variable of this function as it receive the value from someone
@@ -123,7 +123,7 @@ class BinaryTree
         if(root != nullptr)
         {
             postOrder(root->left);
-            postOrder(root->left);
+            postOrder(root->right);
             cout << root->data << " ";
         }
     }
@@ -133,7 +133,7 @@ class BinaryTree
         {
             inOrder(root->left);
             cout << root->data << " ";
-            inOrder(root->left);
+            inOrder(root->right);
         }
     }
 };
