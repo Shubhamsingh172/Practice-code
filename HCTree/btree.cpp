@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-class Tnode // specific class for tree node 
+class Tnode // specific class for tree node
 {
-    char data; // actual data to be inserted in the node of the tree
-    Tnode *left; // left pointer of the tree
+    char data;    // actual data to be inserted in the node of the tree
+    Tnode *left;  // left pointer of the tree
     Tnode *right; // right pointer of the tree
-    Tnode(char d) // constructor which is defined privately 
+    Tnode(char d) // constructor which is defined privately
     {
         data = d;
         left = right = nullptr;
@@ -14,10 +14,10 @@ class Tnode // specific class for tree node
     friend class BinaryTree; // we are making BinaryTree class as our friend so it can access Tnode class private properties.
 };
 
-class Qnode // specific qnode class for storing the node of tree on that many push and pop operation will be performed 
+class Qnode // specific qnode class for storing the node of tree on that many push and pop operation will be performed
 {
-    Tnode *data; // data is in the form of Tnode pointer which is expected
-    Qnode *next; // now for connecting the tree Qnode will go for its next address to connect the tree;
+    Tnode *data;    // data is in the form of Tnode pointer which is expected
+    Qnode *next;    // now for connecting the tree Qnode will go for its next address to connect the tree;
     Qnode(Tnode *d) // constructor defined privately
     {
         data = d;
@@ -26,9 +26,9 @@ class Qnode // specific qnode class for storing the node of tree on that many pu
     friend class Queue;
 };
 
-class Queue 
+class Queue
 {
-    Qnode *front, *rear; // 
+    Qnode *front, *rear; //
     Queue()
     {
         front = rear = nullptr;
@@ -53,8 +53,8 @@ class Queue
         if (!isEmpty())
         {
             Tnode *temp = front->data; // first we are storing the value which will be pop
-            front = front->next; // then moving the front pointer to its next location 
-            if (front == nullptr) // then checking if the front become null then assign rear = nullptr
+            front = front->next;       // then moving the front pointer to its next location
+            if (front == nullptr)      // then checking if the front become null then assign rear = nullptr
                 rear = nullptr;
             return temp; // then returning the temp
         }
@@ -75,21 +75,21 @@ public:
     void createTree(string input)
     {
         int i = 0;
-        while (input[i]) // here one by one the character will check and went for insertion into the tree node 
+        while (input[i]) // here one by one the character will check and went for insertion into the tree node
         {
-            Tnode *p = new Tnode(input[i]); // stroing each character into the tree node 
-            if (root == nullptr) //checking whether the tree's root is null or not if  it is null then the character will assign to root
+            Tnode *p = new Tnode(input[i]); // stroing each character into the tree node
+            if (root == nullptr)            // checking whether the tree's root is null or not if  it is null then the character will assign to root
             {
                 root = p;
             }
-            else //else it will jump to its next condition 
+            else // else it will jump to its next condition
             {
-                Queue que; // we need one for storing the root and its data to add perfectly into the binary tree
+                Queue que;      // we need one for storing the root and its data to add perfectly into the binary tree
                 que.push(root); // step 1
                 while (1)
                 {
-                    Tnode *popped = que.pop(); // step 2
-                    if (popped->left == nullptr) //step 3
+                    Tnode *popped = que.pop();   // step 2
+                    if (popped->left == nullptr) // step 3
                     {
                         popped->left = p;
                         break;
@@ -115,7 +115,7 @@ public:
     }
     void preOrder(Tnode *root)
     {
-        if(root != nullptr)
+        if (root != nullptr)
         {
             cout << root->data << " ";
             preOrder(root->left);
@@ -124,7 +124,7 @@ public:
     }
     void inOrder(Tnode *root)
     {
-        if(root != nullptr)
+        if (root != nullptr)
         {
             inOrder(root->left);
             cout << root->data << " ";
@@ -133,7 +133,7 @@ public:
     }
     void postOrder(Tnode *root)
     {
-        if(root != nullptr)
+        if (root != nullptr)
         {
             postOrder(root->left);
             postOrder(root->right);
@@ -147,9 +147,9 @@ public:
         cout << "\nBFS :";
         while (!que.isEmpty())
         {
-            Tnode *popped = que.pop(); // step 2
+            Tnode *popped = que.pop();   // step 2
             cout << popped->data << " "; // step 3
-            if (popped->left) // step 4
+            if (popped->left)            // step 4
                 que.push(popped->left);
             if (popped->right) // step 4
                 que.push(popped->right);
