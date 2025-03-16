@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-class Node 
+class Node
 {
     int data;
     Node *next;
@@ -15,7 +15,7 @@ class Node
 };
 class linkedlist
 {
-    public:
+public:
     Node *head;
     linkedlist()
     {
@@ -28,12 +28,12 @@ class linkedlist
     void insert(int data)
     {
         Node *temp = new Node(data);
-        if(temp == nullptr)
+        if (temp == nullptr)
         {
             head = temp;
             return;
         }
-        else 
+        else
         {
             temp->next = head;
             head = temp;
@@ -41,29 +41,30 @@ class linkedlist
     }
     int Delete()
     {
-        if(head == nullptr)
+        Node *temp = head;
+        if (temp == nullptr)
             cout << "\nLinked list is empty....\n";
-        else 
+        else
         {
-            Node *temp = head;
             head = head->next;
-            if(head == nullptr)
+            if (head == nullptr)
                 head == nullptr;
-            return temp->data;
         }
+        return temp->data;
     }
     void display()
     {
         Node *temp = head;
         cout << "Elements in the linkedlist are\n";
-        while(temp != nullptr)
+        while (temp != nullptr)
         {
             cout << temp->data << " ";
             temp = temp->next;
         }
     }
 };
-int main() {
+int main()
+{
     linkedlist ll;
     ll.insert(10);
     ll.insert(20);
