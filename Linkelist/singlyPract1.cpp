@@ -47,7 +47,6 @@ class linkedlist
         Node *newNode = new Node(data);
         temp->next = newNode;
     }
-
     int Delete()
     {
         if(head == nullptr)
@@ -58,8 +57,19 @@ class linkedlist
             head = head->next;
             if(head == nullptr)
                 head == nullptr;
-            return temp->data;
+            cout << endl << temp->data << " deleted.\n";
+            delete temp;
         }
+    }
+    void deleteAtEnd()
+    {
+        Node *temp = head;
+        while(temp->next->next != nullptr)
+            temp = temp->next;
+        Node *del = temp->next;
+        temp->next = nullptr;
+        cout << endl << del->data << " deleted.\n";
+        delete del;
     }
     void search(int data)
     {
@@ -73,7 +83,7 @@ class linkedlist
             }
             temp = temp->next;
         }
-        cout << data << "not found in the linked list...\n";
+        cout << data << " is not found in the linked list...\n";
     }
     void display()
     {
@@ -88,14 +98,18 @@ class linkedlist
 };
 int main() {
     linkedlist ll;
-    ll.insert(10);
-    ll.insert(20);
-    ll.insert(30);
-    ll.insert(40);
     ll.insert(50);
-    ll.insert(60);
+    ll.insert(40);
+    ll.insert(30);
+    ll.insert(20);
+    ll.insert(10);
+    ll.insert(5);
+    ll.insertAtEnd(60);
+    ll.insertAtEnd(70);
     ll.display();
-    ll.insertAtEnd(5);
+    ll.Delete();
+    ll.display();
+    ll.deleteAtEnd();
     ll.display();
     int key;
     cout << "\nEnter the key : ";
