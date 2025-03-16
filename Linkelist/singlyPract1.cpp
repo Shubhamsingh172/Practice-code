@@ -104,13 +104,18 @@ int main() {
     ll.insert(20);
     ll.insert(10);
     ll.insert(5);
+
     ll.insertAtEnd(60);
     ll.insertAtEnd(70);
+
     ll.display();
+
     ll.Delete();
     ll.display();
+
     ll.deleteAtEnd();
     ll.display();
+    
     int key;
     cout << "\nEnter the key : ";
     cin >> key;
