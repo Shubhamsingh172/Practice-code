@@ -67,7 +67,7 @@ class DoublyLinkedlist
         tail->next = nullptr;
         delete temp;
     }
-    void display()
+    void displayFromBegin()
     {
         Node *temp = head;
         cout << "Elements are\n";
@@ -75,6 +75,17 @@ class DoublyLinkedlist
         {
             cout << temp->data << " ";
             temp = temp->next;
+        }
+        cout << endl;
+    }
+    void displayFromEnd()
+    {
+        Node *temp = tail;
+        cout << "Elements are\n";
+        while(temp->prev != nullptr)
+        {
+            cout << temp->data << " ";
+            temp = temp->prev;
         }
     }
 };
@@ -88,12 +99,14 @@ int main()
     dll.insertAtEnd(40);
     dll.insertAtBegin(5);
     dll.insertAtBegin(2);
-    dll.display();
+    dll.displayFromBegin();
     dll.deleteAtBegin();
     cout << "After deletion of Node" << endl;
-    dll.display();
+    dll.displayFromBegin();
     dll.deleteAtEnd();
     cout << "After deletion of Node" << endl;
-    dll.display();
+    dll.displayFromBegin();
+    dll.displayFromEnd();
+    cout << endl;
     return 0;
 }
