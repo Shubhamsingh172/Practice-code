@@ -39,6 +39,15 @@ class linkedlist
             head = temp;
         }
     }
+    void insertAtEnd(int data)
+    {
+        Node *temp = head;
+        while(temp->next != nullptr)
+            temp = temp->next;
+        Node *newNode = new Node(data);
+        temp->next = newNode;
+    }
+
     int Delete()
     {
         if(head == nullptr)
@@ -85,6 +94,8 @@ int main() {
     ll.insert(40);
     ll.insert(50);
     ll.insert(60);
+    ll.display();
+    ll.insertAtEnd(5);
     ll.display();
     int key;
     cout << "\nEnter the key : ";
