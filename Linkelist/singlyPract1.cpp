@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-class Node
+class Node 
 {
     int data;
     Node *next;
@@ -15,7 +15,7 @@ class Node
 };
 class linkedlist
 {
-public:
+    public:
     Node *head;
     linkedlist()
     {
@@ -28,12 +28,12 @@ public:
     void insert(int data)
     {
         Node *temp = new Node(data);
-        if (temp == nullptr)
+        if(temp == nullptr)
         {
             head = temp;
             return;
         }
-        else
+        else 
         {
             temp->next = head;
             head = temp;
@@ -41,30 +41,43 @@ public:
     }
     int Delete()
     {
-        Node *temp = head;
-        if (temp == nullptr)
+        if(head == nullptr)
             cout << "\nLinked list is empty....\n";
-        else
+        else 
         {
+            Node *temp = head;
             head = head->next;
-            if (head == nullptr)
+            if(head == nullptr)
                 head == nullptr;
+            return temp->data;
         }
-        return temp->data;
+    }
+    void search(int data)
+    {
+        Node *temp = head;
+        while(temp)
+        {
+            if(temp->data == data)
+            {
+                cout << temp->data << " is found in the linked list...\n";
+                return;
+            }
+            temp = temp->next;
+        }
+        cout << data << "not found in the linked list...\n";
     }
     void display()
     {
         Node *temp = head;
-        cout << "Elements in the linkedlist are\n";
-        while (temp != nullptr)
+        cout << "\nElements in the linkedlist are\n";
+        while(temp != nullptr)
         {
             cout << temp->data << " ";
             temp = temp->next;
         }
     }
 };
-int main()
-{
+int main() {
     linkedlist ll;
     ll.insert(10);
     ll.insert(20);
@@ -73,9 +86,9 @@ int main()
     ll.insert(50);
     ll.insert(60);
     ll.display();
-    cout << endl;
-    ll.Delete();
-    ll.display();
-    cout << endl;
+    int key;
+    cout << "\nEnter the key : ";
+    cin >> key;
+    ll.search(key);
     return 0;
 }
