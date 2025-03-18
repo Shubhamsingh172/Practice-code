@@ -69,7 +69,7 @@ class CircularLinkedList
         {
             cout << temp->data << " ";
             temp = temp->prev;
-        }while(temp != head);
+        }while(temp != tail);
         cout << endl;
     }
 };
