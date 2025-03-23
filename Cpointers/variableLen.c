@@ -11,7 +11,7 @@ int main()
 
     int **arr = (int**)malloc(rows * sizeof(int *));
     int *columns = (int*)malloc(rows * sizeof(int));
-    
+
     for(int i = 0; i < rows; i++)
     {
         printf("Enter the column for 1st matrix : ");
@@ -35,5 +35,8 @@ int main()
             printf("%2d", arr[i][j]);
         printf("\n");
     }
+    for(int i = 0; i < rows; i++)
+        free(arr[i]);
+    free(arr);
     return 0;
 }
