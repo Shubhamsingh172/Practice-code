@@ -19,7 +19,7 @@ int main()
     printf("\nYour Matrix is \n");
     for(int i = 0; i < rows; i++)
     {
-        for(int j = 0; j < columns; j++)
+        for(int j = 0; j < sizeof(arr[i]) / sizeof(int); j++)
             printf("%2d ", arr[i][j]);
         printf("\n");
     }
