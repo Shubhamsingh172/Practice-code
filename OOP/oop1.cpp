@@ -4,6 +4,13 @@ using namespace std;
 class Dog
 {
     public:
+    /*
+    **Static Variables in a Class
+    1.A static data member of a class is shared among all objects of that class.
+    2.It belongs to the class rather than any particular object.
+    3.It must be defined and initialized outside the class because it has a single 
+    memory location in the program.
+    */
     static int count;
     string name;
     int age;
@@ -30,7 +37,14 @@ class Dog
     }
 };
 int Dog::count = 0;
-//we have to declare it outside the class then it will went to its static memory which is fixed
+/*
+Why Declare Inside but Define Outside?
+Ans:1.When we declare a static member inside the class, it informs the compiler 
+    about its existence.
+    2.However, it does not allocate memory at this point.
+    3.Since static members must have a single definition across all translation units, 
+    defining it outside the class ensures proper memory allocation.
+*/
 int main()
 {
     Dog D1;
