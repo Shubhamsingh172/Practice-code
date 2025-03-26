@@ -4,8 +4,15 @@ using namespace std;
 class Dog
 {
     public:
+    static int count;
     string name;
     int age;
+    Dog()
+    {
+        name = "";
+        age = 0;
+        count++;
+    }
     void setName(string n)
     {
         name = n;
@@ -22,6 +29,8 @@ class Dog
         cout << endl;
     }
 };
+int Dog::count = 0;
+//we have to declare it outside the class then it will went to its static memory which is fixed
 int main()
 {
     Dog D1;
@@ -35,6 +44,7 @@ int main()
     D2.setName("Bruno");
     D2.setAge(5);
     D2.showDetails("D2");
-    
+
+    cout << "There are " << Dog::count << " Dogs we have declared.\n";
     return 0;
 }
