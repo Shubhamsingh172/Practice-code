@@ -25,7 +25,6 @@ class Box
         cout << "Height : " << height << endl;
         cout << "Width : " << width << endl;
         cout << "Depth : " << depth << endl;
-        cout << endl;
     }
     double volume()
     {
@@ -37,13 +36,13 @@ int main()
     Box b1;
     b1.setDimension(1.1, 2.2, 3.3);
     b1.display("B1");
-    cout << "Volume of the Box B2 is : " << b1.volume();
-
+    cout << "Volume of the Box B2 is : " << b1.volume() << endl << endl;
+    
     Box b2;
     b2.setDimension(11.11, 22.22, 33.33);
     b2.display("B2");
-    cout << "Volume of the Box B2 is : " << b2.volume();
-    
+    cout << "Volume of the Box B2 is : " << b2.volume() << endl;
+
     return 0;
 
 }
