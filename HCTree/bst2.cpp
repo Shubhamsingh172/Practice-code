@@ -1,14 +1,13 @@
 #include <iostream>
 using namespace std;
 
-class Node
+class Node 
 {
-    public:
     int data;
     Node *left;
     Node *right;
     bool isThread;
-    
+    public:
     Node(int d)
     {
         data = d;
@@ -17,6 +16,7 @@ class Node
     }
     friend class TBST;
 };
+
 class TBST
 {
     Node *root;
@@ -32,7 +32,7 @@ class TBST
         Node *newNode = new Node(d);
         insert(root, newNode);
     }
-    void insert(Node *root, Node *newNode)
+    void insert(Node *&root, Node * newNode)
     {
         if(root == nullptr)
         {
@@ -40,9 +40,9 @@ class TBST
             root->right = dummy;
             root->isThread = 1;
         }
-        else
+        else 
         {
-            if(root->data < newNode->data)
+            if(newNode->data < root->data)
             {
                 if(root->left == nullptr)
                 {
@@ -55,7 +55,7 @@ class TBST
             }
             else 
             {
-                if(root->isThread)
+                if(root->isThread == 1)
                 {
                     newNode->right = root->right;
                     newNode->isThread = 1;
@@ -73,24 +73,19 @@ class TBST
             current = current->left;
         return current;
     }
-    Node *findRightMostNode(Node *current)
-    {
-        while(current->right)
-            current = current->right;
-        return current;
-    }
     void inOrder()
     {
-        Node* current = findLeftMostNode(root);
-        while(current->data != dummy->data)
+        Node *current = findLeftMostNode(root);
+        while(current != dummy)
         {
             cout << current->data << " ";
             if(current->isThread == 1)
                 current = current->right;
-            else
-                current = findLeftMostNode(current->right);
+            else 
+                current = findLeftMostNode(current->right); // it means there is child is present 
         }
     }
+
 };
 int main()
 {
