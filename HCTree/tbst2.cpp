@@ -1,13 +1,14 @@
 #include <iostream>
 using namespace std;
 
-class Node 
+class Node
 {
     int data;
     Node *left;
     Node *right;
     bool isThread;
-    public:
+
+public:
     Node(int d)
     {
         data = d;
@@ -21,7 +22,8 @@ class TBST
 {
     Node *root;
     Node *dummy;
-    public:
+
+public:
     TBST()
     {
         root = nullptr;
@@ -32,60 +34,60 @@ class TBST
         Node *newNode = new Node(d);
         insert(root, newNode);
     }
-    void insert(Node *&root, Node * newNode)
+    void insert(Node *&root, Node *newNode)
     {
-        if(root == nullptr)
+        if (root == nullptr)
         {
             root = newNode;
             root->left = dummy;
             root->isThread = 1;
         }
-        else 
+        else
         {
-            if(newNode->data < root->data)
+            if (newNode->data < root->data)
             {
-                if(root->isThread == 1)
+                if (root->isThread == 1)
                 {
                     newNode->left = root->left;
                     newNode->isThread = 1;
                     root->left = newNode;
                     root->isThread = 0;
                 }
-                else 
+                else
                     insert(root->left, newNode);
             }
-            else 
+            else
             {
-                if(root->right == nullptr)
+                if (root->right == nullptr)
                 {
                     root->right = newNode;
                     newNode->left = root;
                     newNode->isThread = 1;
                 }
-                else 
+                else
                     insert(root->right, newNode);
             }
         }
     }
     Node *findRightMostNode(Node *current)
     {
-        while(current->right)
+        while (current->right)
             current = current->right;
         return current;
     }
-    void inOrder()
+    void reverseInOrder()
     {
+        cout << "Reverse Inorder Traversal" << endl;
         Node *current = findRightMostNode(root);
-        while(current != dummy)
+        while (current != dummy)
         {
             cout << current->data << " ";
-            if(current->isThread == 1)
+            if (current->isThread == 1)
                 current = current->left;
-            else 
-                current = findRightMostNode(current->left); // it means there is child is present 
+            else
+                current = findRightMostNode(current->left); // it means there is child is present
         }
     }
-
 };
 int main()
 {
@@ -99,6 +101,7 @@ int main()
     tbst.insert(11);
     tbst.insert(9);
     tbst.insert(13);
-    tbst.inOrder();
+    tbst.reverseInOrder();
+    cout << endl;
     return 0;
 }
