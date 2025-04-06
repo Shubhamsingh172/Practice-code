@@ -45,7 +45,7 @@ int main() {
     
     for(int i = 0; i < arr.size(); i++)
     {
-        result[(arr[i] + d) % arr.size()] = arr[i];
+        result[ (i - d + arr.size()) % arr.size()] = arr[i];
     }
     
     cout << "\nArray after rotation." << endl;
