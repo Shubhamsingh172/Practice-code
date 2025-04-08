@@ -10,14 +10,14 @@ int main()
     {
         if(i <= n / 2 + 1)
         {
-            if(spaces <= (n + 1) - (i * 2) + 1)
+            if(spaces < i  || spaces > n + 1 - i)
             {
-                cout << "* ";
+                cout << "  ";
                 spaces++;
             }
             else 
             {
-                cout << " ";
+                cout << "* ";
                 spaces++;
             }
             if(spaces == n + 1)
@@ -27,6 +27,24 @@ int main()
                 i++;
             }
         }
-        break;
+        else 
+        {
+            if(spaces < n + 1 - i || spaces > i)
+            {
+                cout << "  ";
+                spaces++;
+            }
+            else 
+            {
+                cout << "* ";
+                spaces++;
+            }
+            if(spaces == n + 1)
+            {
+                cout << endl;
+                spaces = 1;
+                i++;
+            }
+        }
     }
 }
