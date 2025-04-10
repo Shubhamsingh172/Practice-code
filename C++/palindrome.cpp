@@ -6,7 +6,7 @@ int main()
 {
     string str = "naman";
     string rev = str;
-    reverse(rev.begin(), rev.end());
+    reverse(rev.begin(), rev.end()); // REVERSE 
     if(rev == str)
         cout << "Palindrome" << endl;
     else 
