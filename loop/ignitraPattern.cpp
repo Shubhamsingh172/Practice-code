@@ -3,7 +3,10 @@
 using namespace std;
 
 int main() {
-    for(int i = 1; i <= 4; i++)
+    int n;
+    cout << "Enter the number : ";
+    cin >> n;
+    for(int i = 1; i <= n; i++)
     {
         int temp = 4;
         int val = i;
