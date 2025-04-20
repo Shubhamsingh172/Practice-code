@@ -120,6 +120,37 @@ class BinaryTree
                 que.push(popped->right);
         }
     }
+    Node *getRoot()
+    {
+        return root;
+    }
+    void inOrder(Node *root)
+    {
+        if(root)
+        {
+            inOrder(root->left);
+            cout << root->data << " ";
+            inOrder(root->right);
+        }
+    }
+    void preOrder(Node *root)
+    {
+        if(root)
+        {
+            cout << root->data << " ";
+            preOrder(root->left);
+            preOrder(root->right);
+        }
+    }
+    void postOrder(Node *root)
+    {
+        if(root)
+        {
+            postOrder(root->left);
+            postOrder(root->right);
+            cout << root->data << " ";
+        }
+    }
 };
 
 int main()
@@ -130,6 +161,15 @@ int main()
     getline(cin, input);
     bt.createTree(input);
     bt.bfs();
+    cout << endl;
+    cout << "PreOrder traversal" << endl;
+    bt.preOrder(bt.getRoot());
+    cout << endl;
+    cout << "InOrder traversal" << endl;
+    bt.inOrder(bt.getRoot());
+    cout << endl;
+    cout << "PostOrder traversal" << endl;
+    bt.postOrder(bt.getRoot());
     cout << endl;
     return 0;
 }
